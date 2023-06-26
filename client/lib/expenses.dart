@@ -1,5 +1,6 @@
 import 'package:client/widgets/expenses_list.dart';
 import 'package:client/models/expense_model.dart';
+import 'package:client/widgets/new_expense.dart';
 import 'package:flutter/material.dart';
 
 class Expenses extends StatefulWidget {
@@ -33,6 +34,14 @@ class _ExpensesState extends State<Expenses> {
         category: Category.travels),
   ];
 
+  void _openAddExpenseModal() {
+    showModalBottomSheet(
+        context: context,
+        builder: (ctx) {
+          return const NewExpense();
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,7 +62,7 @@ class _ExpensesState extends State<Expenses> {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: _openAddExpenseModal,
             icon: const Icon(Icons.add),
           )
         ],
