@@ -37,7 +37,26 @@ class _ExpensesState extends State<Expenses> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Expenses'),
+        title: const Text('Expense Tracker'),
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(255, 15, 249, 85),
+                Color.fromARGB(255, 15, 249, 167),
+                Color.fromARGB(255, 14, 248, 240)
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+          ),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.add),
+          )
+        ],
       ),
       body: Column(
         children: [
@@ -45,6 +64,9 @@ class _ExpensesState extends State<Expenses> {
             height: 20,
           ),
           const Text('Chart'),
+          const SizedBox(
+            height: 20,
+          ),
           Expanded(
             child: ExpensesList(expenses: _registerExpenses),
           )
