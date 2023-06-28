@@ -1,3 +1,4 @@
+import 'package:client/widgets/chart.dart';
 import 'package:client/widgets/expenses_list.dart';
 import 'package:client/models/expense_model.dart';
 import 'package:client/widgets/new_expense.dart';
@@ -96,7 +97,8 @@ class _ExpensesState extends State<Expenses> {
           const SizedBox(
             height: 20,
           ),
-          const Text('Chart'),
+          // const Text('Chart'),
+          Chart(expenses: _registerExpenses),
           const SizedBox(
             height: 20,
           ),
