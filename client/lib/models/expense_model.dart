@@ -32,6 +32,24 @@ class Expense {
   String get formattedDate {
     return dateFormat.format(date);
   }
+}
 
-  // IconData get icon => categoryIcons[category]!;
+class ExpenseBucket {
+  const ExpenseBucket({
+    required this.category,
+    required this.expenses,
+  });
+
+  final Category category;
+  final List<Expense> expenses;
+
+  double get totalAmount {
+    double total = 0;
+
+    for (final expense in expenses) {
+      total += expense.amount;
+    }
+
+    return total;
+  }
 }
